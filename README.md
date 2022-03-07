@@ -87,7 +87,7 @@ To  run the 1000_0 example run:
 
 To run an example in linux :
 
-You ca use the prepaired script: 
+You can use the prepaired script: 
 
 1. chmod +x GA_run.sh
 
