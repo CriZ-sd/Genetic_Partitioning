@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $1 -lt  500] ; then 
+if [ $1 -lt  500 ] ; then 
  if [ $2 -lt 3 ] ; then 
   lifetime= 75;
   gbetter= 0.00065;
