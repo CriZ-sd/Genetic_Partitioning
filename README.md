@@ -62,11 +62,11 @@ Inside the repo you can find the files nodes_1000_0 and edges_1000_0 which are e
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 To run an example :
 
-g++  -fopenmp -Dpopnum=number_of_nodes -Dthelifetime=... -Dmincutper=... -Dthegbetter=... -Wall Chromosome.cpp Gene.cpp main.cpp Chromosome.h Gene.h  -o GA ;
+1. g++  -fopenmp -Dpopnum=number_of_nodes -Dthelifetime=... -Dmincutper=... -Dthegbetter=... -Wall Chromosome.cpp Gene.cpp main.cpp Chromosome.h Gene.h  -o GA ;
 
 #for the parameters values see the LUT with the parameters 
 
-./GA nodes_file edges_file density_number test_number number_of_parts
+2. ./GA nodes_file edges_file density_number test_number number_of_parts
 
 #density_number ={0,0.25,0.50,0.75} (0=fully connected, 0.25=0.75*fully connected,0.50=0.5* fully connected, 0.75=0.25* fully connected)
 
