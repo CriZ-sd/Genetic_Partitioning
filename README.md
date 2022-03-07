@@ -83,6 +83,20 @@ To  run the 1000_0 example run:
 
 2. ./GA nodes_1000_0 edges_1000_0 0 1 2 #(or 3,4,...10) 
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+To run a test in linux :
+
+1. chmod +x GA_run.sh
+
+2. ./GA_run.sh nn pp dd cc xxxxxx yyyyyyy 
+
+(nn : integer number of nodes
+ pp : integer number of parts 
+ dd : density number (float just for the results files name)
+ cc : test id number (integer just for the results files name)
+xxxxxx : nodes file name
+yyyyyyy : edges file name )
 
 
 
