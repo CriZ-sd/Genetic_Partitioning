@@ -105,5 +105,8 @@ xxxxxx : nodes file name
 
 yyyyyyy : edges file name )
 
+####################################################################
+To run the 1000_0 example for 3 parts  through the script :
 
+./GA_run.sh 1000 3 0 1 nodes_100_0 edges_1000_0 
 
