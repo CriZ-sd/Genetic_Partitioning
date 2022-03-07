@@ -94,10 +94,15 @@ You can use the prepaired script:
 2. ./GA_run.sh nn pp dd cc xxxxxx yyyyyyy 
 
 (nn : integer number of nodes
+
  pp : integer number of parts 
+ 
  dd : density number (float just for the results files name)
+ 
  cc : test id number (integer just for the results files name)
+ 
 xxxxxx : nodes file name
+
 yyyyyyy : edges file name )
 
 
