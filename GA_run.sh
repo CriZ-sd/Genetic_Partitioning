@@ -1,4 +1,16 @@
 #!/bin/bash
+echo 'Help :';
+echo 'first argument : number of nodes (current value :'$1')';
+echo 'second argument : number of parts(current value :'$2')';
+echo 'third argument : density number (current value :'$3')';
+echo 'fourht argument : test id (current value :'$4')';
+echo 'fifth argument : nodes file name (current value :'$5')';
+echo 'sixth argument : edges file name (current value :'$6')';
+
+echo 'Starting' ;
+lifetime = 0;
+gbetter = 0;
+mincutper = 0;
 
 if [ $1 -lt  500 ] ; then 
  if [ $2 -lt 3 ] ; then 
@@ -78,7 +90,10 @@ echo 'Untested number of nodes please try custom selection of parameters values 
 fi
 
 
+
 g++  -fopenmp -Dpopnum=$1 -Dthelifetime=$lifetime -Dmincutper=$mincutper -Dthegbetter=$gbetter -Wall Chromosome.cpp Gene.cpp main.cpp Chromosome.h Gene.h  -o GA ;
 
+echo ;
+echo 'Starting the execution of GA...';
 ./GA  $5 $6 $3 $4 $2 ;
 
