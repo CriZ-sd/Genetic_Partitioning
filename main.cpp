@@ -106,14 +106,10 @@ return counter;
 int main(int argc,char** argv)
 {
 
-    /*->*/ //double ff[numofgenes]={0};
-    //int min__cut[numofgenes]={0};
-//double sumquality[numofgenes]={0};
-    //input array
+    
   short int arraynew[num];
   short int con_array[pins];
-    //Start Menu
-   // int select=0;
+   
     
 
 
@@ -128,8 +124,7 @@ int main(int argc,char** argv)
         ifstream inputfile;
         int c=0;
 
-       // cout<<"Nodes: Insert (carefully!) the file name...('name.txt')"<<endl;
-        //cin>>filename;
+       
         cout<<endl;
         inputfile.open(filename);
         int i_1=0;
@@ -140,20 +135,13 @@ int main(int argc,char** argv)
         }
         inputfile.close();
 
-        /*cout<<"array=[ ";
-
-        for(int i=0; i<num; i++)
-        {
-            cout<<arraynew[i]<<" ";
-        }
-        cout<<" ]"<<endl;*/
+       
 
         string filename_b=(argv[2]);
     ifstream inputfile_b;
     int d=0;
 
-   //cout<<endl<<"Edges : Insert (carefully!) the file name   ...('name.txt')"<<endl;
-     //  cin>>filename_b;
+   
         cout<<endl;
         inputfile_b.open(filename_b);
     int q=0;
@@ -167,34 +155,13 @@ int main(int argc,char** argv)
 
 
 
-    /*cout<<endl<<"Intercon=[ ";
-
-    for(int j=1;j<10;j++){
-        cout<<endl;
-        for(int k=0;k<j;k++){
-
-            cout<<setw(3)<<con_array[(j*j/2-j/2)+k];
-            cout<<"("<<j<<","<<k<<") ";
-        }
-        }
-        if(num<=10){
-    cout<<"]"<<endl;
-        }
-        else{cout<<endl;
-
-        for(int m=0;m<80;m++){
-
-            cout<<".";
-            }
-            cout<<"]"<<endl;
-            }
-*/
+   
 
 
 
     //compute the mean of the sums
     double mo=0;
-   // #pragma omp parallel for   reduction(+:mo)
+   
     for(int i=0; i<num; i++)
     {
         mo+=arraynew[i];
@@ -204,14 +171,7 @@ int main(int argc,char** argv)
 
 
     cout<<endl;
-   // cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl<<"Number of Partitions : "<<par<<endl<<"~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
-    //cout<<endl<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ "<<endl;
-    //cout<<"Number of Genes : "<<(numofgenes+1)<<" | Fit_fun Bound : "<<stde<<"| percentage_of_improvement: "<<gbetter<<" | lifetime: "<<lifetime<<" | " <<"Factor : " <<factor<<endl;
-    //cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ "<<endl;
-
-
-   // int NumofIntercons=0;
-   //NumofIntercons=nonezero(con_array);
+  
 
 
 
@@ -223,12 +183,7 @@ int main(int argc,char** argv)
 
 
    pinsum*=min_cut_percent;
-   //cout<<"***sum_of_node_weights = "<<mo<<" ***"<<endl;
    
-   //cout<<"***mean_of_node_weights = "<<mo<<" ***"<<endl;
-   //cout<<endl<<"*** NumOfIntercons = "<<NumofIntercons<<" ***"<<endl;
-   //cout<<endl<<"***Sum_of_intercon_weights  : "<<pinsum/min_cut_percent<<" ***"<<endl;
-   //cout<<"***Target_for_mincut (Sum_of_intercon_weights x "<<min_cut_percent<<" ) : "<<pinsum<<" ***"<<endl;
 
    
 
@@ -252,23 +207,15 @@ int main(int argc,char** argv)
     double all_best=f_best;
     int    best_g=1;
     int    best_c=Firstgene.bestid;
-   /*->*/
-           /*ff[0]=f_best;
-           min__cut[0]=Firstgene.chromoVector[Firstgene.bestid].getmincut(arraynew,con_array);
-           sumquality[0]=Firstgene.chromoVector[Firstgene.bestid].getsum(arraynew,con_array);
-               */
+   
 
 
 //create a gene vector with all the new genes
     vector <Gene> Mygenes;
 
     Mygenes.push_back(Firstgene); //first element of vector is Firstgene
-       // cout<<endl<<"balanced_par=(f-mean)/mean_gene_"<<1<<" x factor ( "<<factor<<" ) : "<<(Firstgene.chromoVector[Firstgene.bestid].getsum(arraynew,con_array)/mo)*factor<<endl;
-        //cout<<"mincut=(m-pinsum)/pinsum_gene_"<<1<<" x (1-factor) ( "<<1-factor<<" ) : "<<((Firstgene.chromoVector[Firstgene.bestid].getmincut(arraynew,con_array)-pinsum)/pinsum)*(1-factor)<<endl;
-      /*  cout<<"Pinsum (sum_of_intercon x"<<min_cut_percent<<") :"<<pinsum<<endl;
-        cout<<"Factor : "<<factor<<endl;
-        cout<<"f_f=factor x balanced_par + (1-factor) x min_cut"<<endl;*/
-//testfun(Mygenes[0].chromoVector[Firstgene.bestid].chromosome_array,arraynew,mo,con_array);
+       
+
 
    short  int finalsol[num]= {};
     double last=0;
@@ -285,21 +232,18 @@ int main(int argc,char** argv)
 
     while(i<numofgenes && lifet<lifetime && best>stde && lifefrombest>0)
     {
-       /* if(lifet == 0)
-        {
-            tlast=Mygenes[i].bestchromo_n(arraynew,con_array);
-        }*/
+       
         last=Mygenes[i].bestchromo_n(arraynew,con_array);
         Mygenes[i].createGene(arraynew,con_array); //create the new chromo_vector for next gene
         Gene Newgene(i+2,numofc,thres,Mygenes[i].newGen); //create the new gene
         Newgene.par=atoi(argv[5]);
         Mygenes.push_back(Newgene);
 
-       // Mygenes[i+1].geneprint();//print the new gene
+      
 
 
         best=Mygenes[i+1].bestchromo(arraynew,con_array);//find the best chromo of the gene
-       // ff[i+1]=best;
+       
         if(best<all_best)
         {
             all_best=best;
@@ -343,18 +287,9 @@ int main(int argc,char** argv)
             }
 
         }
-      //  min__cut[i+1]=Mygenes[i+1].chromoVector[Mygenes[i+1].bestid].getmincut(arraynew,con_array);
-       // sumquality[i+1]=Mygenes[i+1].chromoVector[Mygenes[i+1].bestid].getsum(arraynew,con_array);
-      //  cout<<endl<<"balanced_par=(f-mean)/mean_gene_"<<i+2<<" x factor("<<factor<<" ) : "<<(Mygenes[i+1].chromoVector[Mygenes[i+1].bestid].getsum(arraynew,con_array)/mo)*factor<<endl;
-       // cout<<"mincut=(m-pinsum)/pinsum_gene_"<<i+2<<" x (1-factor)( "<<1-factor<<" ) : "<<((Mygenes[i+1].chromoVector[Mygenes[i+1].bestid].getmincut(arraynew,con_array)-pinsum)/pinsum)*(1-factor);
-      //  cout<<endl;
-       /* cout<<"Pinsum (sum_of_intercon x"<<min_cut_percent<<") :"<<pinsum<<endl;
-        cout<<"Factor : "<<factor<<endl;
-        cout<<"f_f=factor x balanced_par + (1-factor) x min_cut"<<endl;
-        cout<<endl;*/
-       // cout<<"counting : "<<lifet<<endl<<"percentage of improvement : "<<better<<endl;
+      
         i++;
-//testfun(Mygenes[i].chromoVector[Mygenes[i].bestid].chromosome_array,arraynew,mo,con_array);
+
     }
 
 
@@ -362,13 +297,7 @@ int main(int argc,char** argv)
     {
         //print the best solution
         cout<<endl<<" __________________Best_Solution__________________"<<endl;
-        //cout<<"-> array=    [ ";
-
-      /*  for(int i=0; i<num; i++)
-        {
-            cout<<arraynew[i]<<" ";
-        }
-        cout<<" ] <-"<<endl;*/
+       
         for(int j=0; j<num; j++)
         {
             finalsol[j]=Mygenes[best_g-2].chromoVector[best_c].chromosome_array[j];
@@ -385,13 +314,7 @@ int main(int argc,char** argv)
     else if(best_g!=1 && best<= stde)
     {
         cout<<endl<<" __________________Best_Solution__________________"<<endl;
-       // cout<<"-> array=    [ ";
-
-      /*  for(int i=0; i<num; i++)
-        {
-            cout<<arraynew[i]<<" ";
-        }
-        cout<<" ] <-"<<endl;*/
+      
 
         for(int j=0; j<num; j++)
         {
@@ -408,13 +331,7 @@ int main(int argc,char** argv)
     {
 
         cout<<endl<<" __________________Best_Solution__________________"<<endl;
-       // cout<<"-> array=    [ ";
-
-        /*for(int i=0; i<num; i++)
-        {
-            cout<<arraynew[i]<<" ";
-        }
-        cout<<" ] <-"<<endl;*/
+      
 
         for(int j=0; j<num; j++)
         {
@@ -443,45 +360,7 @@ int main(int argc,char** argv)
 
 cout<<"Total Gene_Num: "<<i<<endl;
 cout<<endl<<"********* Time of execution : "<<time2 -time1<<" sec  *********"<<endl;
-/*
-cout<<endl;
-cout<<"___________________________________________________________________"<<endl;
-cout<<"ff=[ ";
-for(int k=0;k<Mygenes[i].idg-1;k++)
-    {
-        cout<<ff[k]<<",";
-}
-cout<<ff[Mygenes[i].idg-1]<<" ";
-cout<<"]"<<endl;
 
-
-cout<<"___________________________________________________________________"<<endl;
-cout<<"Min_Cut=[ ";
-for(int k=0;k<Mygenes[i].idg-1;k++)
-    {
-        cout<<min__cut[k]<<",";
-}
-cout<<min__cut[Mygenes[i].idg-1]<<" ";
-cout<<"]"<<endl;
-cout<<"___________________________________________________________________"<<endl;
-cout<<"sums=[ ";
-for(int k=0;k<Mygenes[i].idg-1;k++)
-    {
-        cout<<sumquality[k]<<",";
-}
-cout<<sumquality[Mygenes[i].idg-1]<<" ";
-cout<<"]"<<endl;
-cout<<"___________________________________________________________________"<<endl;
-
-*/
-    //Destruct all the chromosomes and genes
-
-   /* for(unsigned int i=0; i<Mygenes.size(); i++)
-    {
-
-        Mygenes[i].~Gene();
-    }
-*/
     
  
     string s1="GA_Results_";
