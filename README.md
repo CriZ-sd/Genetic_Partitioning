@@ -97,9 +97,9 @@ You can use the prepaired script:
 
  pp : integer number of parts 
  
- dd : density number (float just for the results files name)
+ dd : density number (float just for the results files name-doesn't affect the result)
  
- cc : test id number (integer just for the results files name)
+ cc : test id number (integer just for the results files name-doesn't affect the result)
  
 xxxxxx : nodes file name
 
