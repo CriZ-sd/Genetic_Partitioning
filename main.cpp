@@ -72,9 +72,9 @@ for(int k=0;k<partition_num;k++){
 
 
 
-    cout<<endl<<"Min_Cut : "<<mincut<<endl;
+    cout<<endl<<"Edge-cut : "<<mincut<<endl;
 
-    cout<<endl<<"f : "<< sumall<<endl;
+    cout<<endl<<"Imbalance : "<< sumall<<endl;
 
     cout<<endl<<"*******************************************"<<endl;
 
