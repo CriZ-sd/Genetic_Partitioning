@@ -93,7 +93,7 @@ To run an example with custom parameters' values :
 
 1. g++  -fopenmp -Dpopnum=number_of_nodes -Dthelifetime=... -Dmincutper=... -Dthegbetter=... -Wall Chromosome.cpp Gene.cpp main.cpp Chromosome.h Gene.h  -o GA ;
 
-#for the parameters values see the LUT with the parameters 
+#for the parameters values see the LUT with the parameters -or- choose custom values
 
 2. ./GA nodes_file edges_file density_number test_number number_of_parts
 
@@ -108,7 +108,7 @@ To  run the 1000_0 example with custom parameters values run:
 
 1. g++  -fopenmp -Dpopnum=$ncount -Dthelifetime=55 -Dmincutper=...  -Dthegbetter=0.0065 -Wall Chromosome.cpp Gene.cpp main.cpp Chromosome.h
 
-#Dmincutper: 2-parts->0.4 , 3-parts -> 0.6, 4,5-parts-> 0.7 , 6,7-parts-> 0.8 , 8,9,10-parts -> 1.6
+#Dmincutper: 2-parts->0.4 , 3-parts -> 0.6, 4,5-parts-> 0.7 , 6,7-parts-> 0.8 , 8,9,10-parts -> 1.6 -or- choose custom values for all the parameters
 
 2. ./GA GA_nodes_1000_0 GA_edges_1000_0 0 1 2 #(or 3,4,...10) 
 
