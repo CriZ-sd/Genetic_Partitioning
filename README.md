@@ -57,7 +57,7 @@ edge_3_2 weight
 __________________________________
 
 
-Inside the repo you can find the files nodes_1000_0 and edges_1000_0 which are example files for a fully connected graph with 1000 nodes. 
+Inside the repo you can find the files GA_nodes_1000_0 and GA_edges_1000_0 which are example files for a fully connected graph with 1000 nodes. 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 To run an example :
@@ -81,7 +81,7 @@ To  run the 1000_0 example run:
 
 #Dmincutper: 2-parts->0.4 , 3-parts -> 0.6, 4,5-parts-> 0.7 , 6,7-parts-> 0.8 , 8,9,10-parts -> 1.6
 
-2. ./GA nodes_1000_0 edges_1000_0 0 1 2 #(or 3,4,...10) 
+2. ./GA GA_nodes_1000_0 GA_edges_1000_0 0 1 2 #(or 3,4,...10) 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -109,5 +109,5 @@ yyyyyyy : edges file name )
 
 To run the 1000_0 example for 3 parts  through the script :
 
-./GA_run.sh 1000 3 0 1 nodes_100_0 edges_1000_0 
+./GA_run.sh 1000 3 0 1 GA_nodes_100_0 GA_edges_1000_0 
 
