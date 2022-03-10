@@ -101,14 +101,14 @@ To run an example with custom parameters' values :
 
 #test_number = integer from 0 to inf (doesn't affect the execution, just for  the name of the results' files)
 
-#number_of_parts = integer from 2 to 10 (number of parts to partition the graph , you can try mire than 10 but only till 10 are tested the parameters)
+#number_of_parts = integer from 2 to 10 (number of parts to partition the graph , you can try more than 10 but only till 10 are tested the parameters)
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 To  run the 1000_0 example with custom parameters values run:
 
 1. g++  -fopenmp -Dpopnum=$ncount -Dthelifetime=55 -Dmincutper=...  -Dthegbetter=0.0065 -Wall Chromosome.cpp Gene.cpp main.cpp Chromosome.h
 
-#Dmincutper: 2-parts->0.4 , 3-parts -> 0.6, 4,5-parts-> 0.7 , 6,7-parts-> 0.8 , 8,9,10-parts -> 1.6 -or- choose custom values for all the #parameters
+#Dmincutper: 2-parts->0.4 , 3-parts -> 0.6, 4,5-parts-> 0.7 , 6,7-parts-> 0.8 , 8,9,10-parts -> 1.6 -or- choose #custom values for all the parameters
 
 2. ./GA GA_nodes_1000_0 GA_edges_1000_0 0 1 2 #(or 3,4,...10) 
 
