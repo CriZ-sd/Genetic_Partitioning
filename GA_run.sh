@@ -18,7 +18,7 @@ if [ $1 -lt  500 ] ; then
   lifetime=75;
   gbetter=0.00065;
   mincutper=0.4;
- elif [ $2 -lt 4] ; then
+ elif [ $2 -lt 4 ] ; then
   lifetime= 75;
   gbetter=0.00065;
   mincutper=0.6;
