@@ -70,7 +70,7 @@ for(int k=0;k<partition_num;k++){
 
     }
 
-
+  
 
     cout<<endl<<"Edge-cut : "<<mincut<<endl;
 
