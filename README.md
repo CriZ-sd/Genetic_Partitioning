@@ -2,9 +2,9 @@
 
 This repo includes the code for the partitioning genetic aglorithm 
 
-To run an example you need a nodes file and an edges file.
+To run an example you need a nodes' file and an edges' file.
 
-nodes file:
+nodes' file:
 a simple (txt) file with the nodes' weights 
 ____________________________________
 node_0 weight 
@@ -61,7 +61,7 @@ Inside the repo you can find the files GA_nodes_1000_0 and GA_edges_1000_0 which
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
-To run an example in linux :
+To run an example  :
 
 You can use the prepaired script: 
 
